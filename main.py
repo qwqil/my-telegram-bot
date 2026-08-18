@@ -8,7 +8,7 @@ from telebot import types
 import requests
 from urllib.parse import urlparse
 
-BOT_TOKEN = "AAF5SRN_2v3qMQZl7MFamYqlCqkS0mb4JCI"
+BOT_TOKEN = "8659664050:AAGrcpu5EcCjYsLgClQu0C7kdrkMgLCMPAE"
 bot = telebot.TeleBot(BOT_TOKEN)
 
 # تخزين لغة المستخدم (الافتراضي: عربي)
