@@ -102,5 +102,21 @@ def handle_message(message):
         err_msg = "يرجى إرسال رابط صحيح (مثال: google.com)" if lang == 'ar' else "Please send a valid URL (e.g., google.com)."
         bot.reply_to(message, err_msg)
 
-print("The Guard Web Bot is running with multi-language support...")
-bot.infinity_polling()
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Bot is live and awake!"
+
+def run_flask():
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
+
+def keep_alive():
+    t = Thread(target=run_flask)
+    t.start()
+
+if __name__ == '__main__':
+    keep_alive()
+    print("The Guard Web Bot is running with multi-language support...")
+    bot.infinity_polling()
